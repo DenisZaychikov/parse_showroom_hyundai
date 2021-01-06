@@ -13,12 +13,18 @@ def send_message(bot, text):
 
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     environ.Env.read_env()
     # load_dotenv()
     # user_chat_id = os.getenv('USER_CHAT_ID')
     # token = os.getenv('BOT_TOKEN')
     user_chat_id = os.environ['USER_CHAT_ID']
     token = os.environ['BOT_TOKEN']
+=======
+    load_dotenv()
+    user_chat_id = os.getenv('USER_CHAT_ID')
+    token = os.getenv('BOT_TOKEN')
+>>>>>>> 494211542fef119b4a0f355f1d0b6445b61c5237
     bot = Bot(token=token)
     bot.send_message(chat_id=user_chat_id, text='Bot is working')
     while True:
