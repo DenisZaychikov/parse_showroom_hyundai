@@ -16,6 +16,7 @@ def send_message(bot, text):
 user_chat_id = os.getenv('USER_CHAT_ID')
 token = os.getenv('BOT_TOKEN')
 bot = Bot(token=token)
+bot.send_message(chat_id=user_chat_id, text='Bot is working')
 while True:
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless')
