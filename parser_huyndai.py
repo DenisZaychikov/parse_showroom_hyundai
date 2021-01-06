@@ -1,9 +1,10 @@
 from telegram import Bot
 import time
 from bs4 import BeautifulSoup
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 from selenium import webdriver
+import environ
 from webdriver_manager.chrome import ChromeDriverManager
 
 
@@ -12,9 +13,12 @@ def send_message(bot, text):
 
 
 if __name__ == '__main__':
-    load_dotenv()
-    user_chat_id = os.getenv('USER_CHAT_ID')
-    token = os.getenv('BOT_TOKEN')
+    environ.Env.read_env()
+    # load_dotenv()
+    # user_chat_id = os.getenv('USER_CHAT_ID')
+    # token = os.getenv('BOT_TOKEN')
+    user_chat_id = os.environ['USER_CHAT_ID']
+    token = os.environ['BOT_TOKEN']
     bot = Bot(token=token)
     bot.send_message(chat_id=user_chat_id, text='Bot is working')
     while True:
