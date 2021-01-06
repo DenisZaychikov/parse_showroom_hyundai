@@ -1,10 +1,9 @@
 from telegram import Bot
 import time
 from bs4 import BeautifulSoup
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import os
 from selenium import webdriver
-import environ
 from webdriver_manager.chrome import ChromeDriverManager
 
 
@@ -13,21 +12,18 @@ def send_message(bot, text):
 
 
 if __name__ == '__main__':
-    environ.Env.read_env()
-    # load_dotenv()
-    # user_chat_id = os.getenv('USER_CHAT_ID')
-    # token = os.getenv('BOT_TOKEN')
-    user_chat_id = os.environ['USER_CHAT_ID']
-    token = os.environ['BOT_TOKEN']
-    # load_dotenv()
+    load_dotenv()
+    user_chat_id = os.getenv('USER_CHAT_ID')
+    token = os.getenv('BOT_TOKEN')
     user_chat_id = os.getenv('USER_CHAT_ID')
     token = os.getenv('BOT_TOKEN')
     bot = Bot(token=token)
     bot.send_message(chat_id=user_chat_id, text='Bot is working')
+    chromedriver = 'chromedriver'
     while True:
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('--headless')
-        browser = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+        browser = webdriver.Chrome(chromedriver, options=chrome_options)
         browser.get(
             'https://showroom.hyundai.ru/')
         soup = BeautifulSoup(browser.page_source, 'lxml')
