@@ -32,7 +32,7 @@ while True:
         car_price = car.find(class_='car-item__price-top').text
         car_engine = car.find_all(class_='mt-8')[1].find(class_='title').text
         text = f'''Автомобиль - Hyundai {car_brand}\nЦена - {car_price}\nДвигатель - {car_engine}'''
-        if car_brand == 'Новая ELANTRA':
+        if car_brand == 'Новая ELANTRA' or car_brand == 'Tucson':
             send_message(bot, text=text)
     browser.quit()
     time.sleep(80)
