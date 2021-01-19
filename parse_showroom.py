@@ -15,6 +15,7 @@ def send_message(bot, text):
 user_chat_id = os.getenv('USER_CHAT_ID')
 token = os.getenv('BOT_TOKEN')
 bot = Bot(token=token)
+bot.send_message(chat_id=user_chat_id, text='bot is working')
 while True:
     chrome_options = webdriver.ChromeOptions()
     chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
