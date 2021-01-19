@@ -1,1 +1,1 @@
-bot: parser_huyndai.py
+web: python3 parser_huyndai.py
