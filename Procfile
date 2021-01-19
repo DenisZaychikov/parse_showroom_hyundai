@@ -1,1 +1,1 @@
-web: python3 parser_huyndai.py
+web: python3 parse_showroom.py
